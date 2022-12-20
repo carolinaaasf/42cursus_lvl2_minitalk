@@ -6,7 +6,7 @@
 /*   By: csilva-f <csilva-f@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 21:21:52 by csilva-f          #+#    #+#             */
-/*   Updated: 2022/12/20 19:10:31 by csilva-f         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:36:12 by ledos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	send_signal(int pid, char *str)
 		c = *(str);
 		while (i < 8)
 		{
-			if (c << i & 0b00000000)
+			if (c << i & 0b10000000)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
