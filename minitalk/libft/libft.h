@@ -6,7 +6,7 @@
 /*   By: csilva-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 10:07:17 by csilva-f          #+#    #+#             */
-/*   Updated: 2022/11/13 18:03:58 by csilva-f         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:07:51 by csilva-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "libftprintf/ft_printf.h"
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
