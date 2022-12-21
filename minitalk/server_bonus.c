@@ -6,7 +6,7 @@
 /*   By: csilva-f <csilva-f@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:40:42 by csilva-f          #+#    #+#             */
-/*   Updated: 2022/12/21 21:52:33 by ledos-sa         ###   ########.fr       */
+/*   Updated: 2022/12/21 23:54:48 by csilva-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ void	handler(int sig, siginfo_t *info, void *content)
 			ft_putstr_fd("Error: Failed to send SIGUSR1\n", 2);
 		return ;
 	}
-	/* if (kill(info->si_pid, SIGUSR2) == -1) */
-	/* 	ft_putstr_fd("Error: Failed to send SIGUSR2\n", 2); */
 }
 
 int	main(void)
@@ -45,7 +43,7 @@ int	main(void)
 
 	ft_printf("Server process id: %d\n", getpid());
 	sa_sig.sa_sigaction = &handler;
-	sa_sig.sa_flags	= SA_SIGINFO;
+	sa_sig.sa_flags = SA_SIGINFO;
 	if (sigaction(SIGUSR1, &sa_sig, NULL) == -1)
 		ft_putstr_fd("Error: Failed to send SIGUSR1\n", 2);
 	if (sigaction(SIGUSR2, &sa_sig, NULL) == -1)

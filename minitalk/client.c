@@ -6,7 +6,7 @@
 /*   By: csilva-f <csilva-f@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 22:17:50 by csilva-f          #+#    #+#             */
-/*   Updated: 2022/12/21 22:18:00 by csilva-f         ###   ########.fr       */
+/*   Updated: 2022/12/21 23:56:19 by csilva-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ void	send_signal(int pid, char *str)
 int	main(int argc, char **argv)
 {
 	if (argc != 3)
-		ft_printf("The client must receive 2 parameters: the server PID and the string to send. Please try again.\n");
+		ft_printf("The client must receive 2 parameters: \
+				the server PID and the string to send. \
+				Please try again.\n");
 	else
 		send_signal(ft_atoi(argv[1]), argv[2]);
 	return (0);

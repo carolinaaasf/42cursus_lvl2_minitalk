@@ -6,7 +6,7 @@
 /*   By: csilva-f <csilva-f@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 21:21:52 by csilva-f          #+#    #+#             */
-/*   Updated: 2022/12/21 23:44:01 by ledos-sa         ###   ########.fr       */
+/*   Updated: 2022/12/21 23:53:19 by csilva-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stddef.h>
 #include <unistd.h>
 
-size_t	g_letras = 0;
+size_t volatile	g_letras = 0;
 
 void	send_signal(int pid, char *str)
 {
