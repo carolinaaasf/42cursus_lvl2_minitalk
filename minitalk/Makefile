@@ -6,20 +6,24 @@
 #    By: csilva-f <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 19:02:20 by csilva-f          #+#    #+#              #
-#    Updated: 2022/12/20 19:12:36 by csilva-f         ###   ########.fr        #
+#    Updated: 2022/12/20 23:57:57 by csilva-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 
 SERVER = server
 CLIENT = client
 SRCS_SERVER = server.c
 SRCS_CLIENT = client.c
+SRCS_SERVER_BONUS = server_bonus.c
+SRCS_CLIENT_BONUS = client_bonus.c
 
 OBJS_SERVER = $(SRCS_SERVER:.c=.o)
 OBJS_CLIENT = $(SRCS_CLIENT:.c=.o)
+OBJS_SERVER_BONUS = $(SRCS_SERVER_BONUS:.c=.o)
+OBJS_CLIENT_BONUS = $(SRCS_CLIENT_BONUS:.c=.o)
 LIBFT = libft/libft.a
 NAME = $(SERVER) $(CLIENT)
 
@@ -32,10 +36,16 @@ $(NAME): $(OBJS_SERVER) $(OBJS_CLIENT) $(LIBFT)
 $(LIBFT):
 		${MAKE} -C ./libft
 
+bonus: ${OBJS_SERVER_BONUS} ${OBJS_CLIENT_BONUS} ${LIBFT}
+		${CC} ${OBJS_SERVER_BONUS} libft/libft.c -o ${SERVER}
+		${CC} ${OBJS_CLIENT_BONUS} libft/libft.c -o ${CLIENT}
+
 clean:	
-		rm -rf ${OBJS_SERVER} ${OBJS_CLIENT}
+		$(MAKE) clean -C ./libft
+		rm -rf ${OBJS_SERVER} ${OBJS_CLIENT} ${OBJS_SERVER_BONUS} ${OBJS_CLIENT_BONUS}
 
 fclean:	clean
+		$(MAKE) fclean -C ./libft
 		rm -rf $(NAME)
 
 re:	fclean all
