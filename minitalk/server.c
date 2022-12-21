@@ -6,7 +6,7 @@
 /*   By: csilva-f <csilva-f@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:40:42 by csilva-f          #+#    #+#             */
-/*   Updated: 2022/12/20 19:33:46 by csilva-f         ###   ########.fr       */
+/*   Updated: 2022/12/21 23:05:26 by csilva-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	handler(int sig)
 {
-	static int			i = 0;
+	static int				i = 0;
 	static unsigned char	c = 0;
 
 	if (sig == SIGUSR2)
