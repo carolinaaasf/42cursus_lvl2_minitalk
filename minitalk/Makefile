@@ -6,12 +6,12 @@
 #    By: csilva-f <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 19:02:20 by csilva-f          #+#    #+#              #
-#    Updated: 2022/12/20 23:57:57 by csilva-f         ###   ########.fr        #
+#    Updated: 2022/12/21 21:38:38 by csilva-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Werror -Wextra
 
 SERVER = server
 CLIENT = client
@@ -37,8 +37,8 @@ $(LIBFT):
 		${MAKE} -C ./libft
 
 bonus: ${OBJS_SERVER_BONUS} ${OBJS_CLIENT_BONUS} ${LIBFT}
-		${CC} ${OBJS_SERVER_BONUS} libft/libft.c -o ${SERVER}
-		${CC} ${OBJS_CLIENT_BONUS} libft/libft.c -o ${CLIENT}
+		${CC} ${OBJS_SERVER_BONUS} libft/libft.a -o ${SERVER}
+		${CC} ${OBJS_CLIENT_BONUS} libft/libft.a -o ${CLIENT}
 
 clean:	
 		$(MAKE) clean -C ./libft
