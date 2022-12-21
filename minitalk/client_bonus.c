@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 		if (!ft_isdigit(argv[1][i++]))
 			ft_printf("The pid is invalid. Please try again.");
 	if (argc != 3 || *argv[2] == 0)
-		ft_printf("The arguments sent are invalid (wether you introduces a wrong number of arguments or the message is empty). Please try again.\n");
+		ft_printf("The arguments sent are invalid (wether you introduced a wrong number of arguments or the message is empty). Please try again.\n");
 	else
 	{
 		sa_sig.sa_handler = &handler;
